@@ -1,4 +1,3 @@
-
 require 'holidapi'
 require 'sinatra'
 require 'sinatra/content_for'
