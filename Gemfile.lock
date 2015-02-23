@@ -22,5 +22,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  holidapi
+  holidapi (~> 0.0.1)
   sinatra (~> 1.4.5)
