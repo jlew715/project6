@@ -1,9 +1,21 @@
 <% content_for :content1 do %>
-  <p>It's big, it's blue, it's...</p>
-  <br/>
-  <p><strong>BlewJeens</strong></p>
-<% end %>
+  <h1>Holidays this month:</h1>
+  <%
+    time = Time.new
+    holary = Array.new
+    holidays = HolidApi.get(country: 'us', year: time.year, month: time.month)
+    for i in 0..holidays.length-1 do
+      holary[i] = holidays[i][0]["name"]
+    end
 
-<% content_for :content2 do %>
-  <img src="img/jean.png" height="400px" width="200px"></img>
+    holary2 = Array.new
+    holidays2 = HolidApi.get(country: 'us', year: 1993, month: 7)
+    for i in 0..holidays2.length-1 do
+      holary2[i] = holidays2[i][0]["name"]
+    end
+  %>
+  <%= holary.join("<br/>") %>
+  <br/>
+  <h1>Holidays the month I was born (July 1993, United States):</h1>
+  <%= holary2.join("<br/>") %>
 <% end %>
